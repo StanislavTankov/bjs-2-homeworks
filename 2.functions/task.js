@@ -2,7 +2,7 @@
 function getArrayParams(arr) {
   let min = arr[0];
   let max = arr[0];
-  let sum = arr[1];
+  let sum = arr[0];
   let avg = 0;
 
   for (let i=0; i < arr.lenght; i++){
@@ -20,7 +20,7 @@ function getArrayParams(arr) {
   return { min:min, max:max, avg:Number(avg) };
 }
 
-getArrayParams(99,-12,11);
+getArrayParams([99,-12,11]);
 
 
 
@@ -42,12 +42,24 @@ function makeWork(arrOfArr, func) {
       max = sum;
     }
   }
+  return max;
+  return makeWork(arrOfArr, worker);
 }
-return max;
-return makeWork(arrOfArr, worker);
+
 
 
 // Задание 3
 function worker2(arr) {
-  // Ваш код
+  let min = arr[0];
+  let max = arr[0];
+  let avg = 0;
+
+  for(let i=0; i<arr.lenght; i++)
+  if (arr[i] < min){
+    min = arr[i];
+  }else if(arr[i]>max){
+    max = arr[i];
+  }
+  avg = (min - max).toFixed(2);
+  return avg;
 }
