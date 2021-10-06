@@ -8,7 +8,7 @@ compareArrays([2, 45, 33], [33, 45, 33]);
 
 // задание 2
 function advancedFilter(arr) {
-  return arr.filter((number) => number > 0) && arr.filter((number) => % 3 === 1).map ((number) => number * 10);
+  return arr.filter((number) => number > 0) && arr.filter((number) => number % 3 === 0).map((number) => number * 10);
 }
 
 advancedFilter([-4, 5, 8, 55, 33,-25]);
